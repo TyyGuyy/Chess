@@ -306,4 +306,4 @@ public class Chess {
         return finalMove;
     }
 }
-}
+
