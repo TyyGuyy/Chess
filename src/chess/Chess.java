@@ -126,28 +126,28 @@ public class Chess {
      switch (endFile)
       {
           case 'a':
-              endPos = (startRank - 1) * 8;
+              endPos = (endRank - 1) * 8;
               break;
           case 'b':
-              endPos = ((startRank - 1) * 8) + 1;
+              endPos = ((endRank - 1) * 8) + 1;
               break;
           case 'c':
-              endPos = ((startRank - 1) * 8) + 2;
+              endPos = ((endRank - 1) * 8) + 2;
               break;
           case 'd':
-              endPos = ((startRank - 1) * 8) + 3;
+              endPos = ((endRank - 1) * 8) + 3;
               break;
           case 'e':
-              endPos = ((startRank - 1) * 8) + 4;
+              endPos = ((endRank - 1) * 8) + 4;
               break;
           case 'f':
-              endPos = ((startRank - 1) * 8) + 5;
+              endPos = ((endRank - 1) * 8) + 5;
               break;
           case 'g':
-              endPos = ((startRank - 1) * 8) + 6;
+              endPos = ((endRank - 1) * 8) + 6;
               break;
           case 'h':
-              endPos = ((startRank - 1) * 8) + 7;
+              endPos = ((endRank - 1) * 8) + 7;
               break;
               
       }

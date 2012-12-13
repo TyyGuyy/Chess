@@ -121,7 +121,7 @@ public class Gamestate {
                       }
                    }
                 }
-                else
+                else if(player == 1)
                 {
                   if(pos-8 > 0)
                   {
