@@ -32,23 +32,42 @@ public class Gamestate {
        state = myState.state;
    }
    
-   public byte doMove(int[] move) {
-       byte removedPiece = state[move[1]];
-       state[move[1]] = state[move[0]];
-       state[move[0]] = 0;
-       if (state[move[1]] == 1 && move[1] >= 56) {
-           state[move[1]] = (byte) 5;
-       }
-       else if (state[move[1]] == 7 && move[1] <= 7) {
-           state[move[1]] = (byte) 11;
-       }
-       return removedPiece;
-   }
-   
-   public void undoMove(int[] move, byte piece) {
-       state[move[0]] = state[move[1]];
-       state[move[1]] = piece;
-   }
+   public byte doMove(int[] move) 
+   {
+        byte removedPiece = state[move[1]];
+        state[move[1]] = state[move[0]];
+        state[move[0]] = 0;
+        if (state[move[1]] == 1 && move[1] >= 56) 
+        {
+            state[move[1]] = (byte) 5;
+            return (byte) (removedPiece + 13);
+        }
+        else if (state[move[1]] == 7 && move[1] <= 7) 
+        {
+            state[move[1]] = (byte) 11;
+            return (byte) (removedPiece + 26);  
+        }
+        return removedPiece;
+    }
+
+    public void undoMove(int[] move, byte piece) 
+    {
+        if(piece <= 25 && piece > 12)
+        {
+            state[move[0]] = 1;
+            state[move[1]] = (byte) (piece - 13);
+        }
+        else if(piece >= 26)
+        {
+            state[move[0]] = 7;
+            state[move[1]] = (byte) (piece - 26);
+        }
+        else
+        {
+            state[move[0]] = state[move[1]];
+            state[move[1]] = piece;
+        }
+    }
           class GameMoves {
     
             public ArrayList<Integer> positions;

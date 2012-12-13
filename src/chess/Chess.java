@@ -27,9 +27,9 @@ public class Chess {
 */
     public static void main(String[] args) throws IOException, JSONException, InterruptedException {
         final int maxSearchDepth = 2;
-        final String gameId = "286"; // Replace with game ID
-        final String password = "32c68cae"; // Replace with team secret
-        final int team = 1; // replace with team number
+        final String gameId = "294"; // Replace with game ID
+        final String password = "1a77594c"; // Replace with team secret
+        final int team = 2; // replace with team number
         final String baseUrl = "http://www.bencarle.com/chess/";
         final String credentials = gameId + "/" + team + "/" + password + "/";
         
@@ -41,7 +41,7 @@ public class Chess {
         JSONObject json = null;
         
         Gamestate board = new Gamestate();
-        Minimax search = new Minimax(board, -1, maxSearchDepth);
+        Minimax search = new Minimax(board, 1, maxSearchDepth);
         int[] move;
         
        
